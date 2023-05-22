@@ -3,5 +3,5 @@ from .views import tecnico_views
 
 urlpatterns = [
     path('cadastrar_tecnico', tecnico_views.cadastrar_tecnico, name='cadastrar_tecnico'),
-   # path('listar_clientes', cliente_views.listar_clientes, name='listar_clientes'),
+    path('listar_tecnicos', tecnico_views.listar_tecnicos, name='listar_tecnicos'),
 ]

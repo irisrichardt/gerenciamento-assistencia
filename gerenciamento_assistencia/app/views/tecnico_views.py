@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from ..forms.tecnico_forms import TecnicoForm
 from ..forms.endereco_forms import EnderecoTecnicoForm
@@ -25,28 +25,15 @@ def cadastrar_tecnico(request):
                 tecnico_novo = tecnico.Tecnico(nome=nome, email=email, data_nascimento=data_nascimento,
                                            profissao=profissao, cpf=cpf, endereco=endereco_bd)
                 tecnico_service.cadastrar_tecnico(tecnico_novo)
-                # return redirect('listar_clientes')
+                return redirect('listar_tecnicos')
     else:
         form_tecnico = TecnicoForm()
         form_endereco = EnderecoTecnicoForm()
     return render(request, 'tecnicos/form_tecnico.html', {'form_tecnico': form_tecnico, 'form_endereco': form_endereco})
 
-
-
-
-
-#  import datetime
-
-# from django.shortcuts import render, redirect
-
-# from ..forms.cliente_forms import ClienteForm
-# from ..forms.endereco_forms import EnderecoClienteForm
-# from ..entidades import cliente, endereco
-# from ..services import cliente_service, endereco_service, pet_service, consulta_service
-
-# def listar_clientes(request):
-#     clientes = cliente_service.listar_clientes()
-#     return render(request, 'clientes/lista_clientes.html', {'clientes': clientes})
+def listar_tecnicos(request):
+    tecnicos = tecnico_service.listar_tecnicos()
+    return render(request, 'tecnicos/lista_tecnicos.html', {'tecnicos': tecnicos})
 
 
 # def listar_cliente_id(request, id):
