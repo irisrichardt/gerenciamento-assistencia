@@ -23,7 +23,7 @@ Listagem de técnicos
           <tbody>
               {% for tecnico in tecnicos %}
               <tr>
-                <td><a href="{% url 'listar_cliente_id' cliente.id %}">{{tecnico.nome}}</a></td>
+                <td><a href="{% url 'listar_tecnico_id' tecnico.id %}">{{tecnico.nome}}</a></td>
                   <td>{{tecnico.data_nascimento}}</td>
                   <td>{{tecnico.profissao}}</td>
                   <td>

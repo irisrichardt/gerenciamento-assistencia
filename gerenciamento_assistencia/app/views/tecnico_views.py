@@ -35,12 +35,9 @@ def listar_tecnicos(request):
     tecnicos = tecnico_service.listar_tecnicos()
     return render(request, 'tecnicos/lista_tecnicos.html', {'tecnicos': tecnicos})
 
-
-# def listar_cliente_id(request, id):
-#     cliente = cliente_service.listar_cliente_id(id)
-#     pets = pet_service.listar_pets(id)
-#     consultas = consulta_service.listar_consultas_pets(id)
-#     return render(request, 'clientes/lista_cliente.html', {'cliente': cliente, 'pets': pets, 'consultas': consultas})
+def listar_tecnico_id(request, id):
+    tecnico = tecnico_service.listar_tecnico_id(id)
+    return render(request, 'tecnicos/lista_tecnico.html', {'tecnico': tecnico})
 
 
 # def remover_cliente(request, id):

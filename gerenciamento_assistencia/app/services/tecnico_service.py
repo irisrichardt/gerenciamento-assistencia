@@ -6,3 +6,6 @@ def cadastrar_tecnico(tecnico):
 
 def listar_tecnicos():
     return Tecnico.objects.all()
+
+def listar_tecnico_id(id):
+    return Tecnico.objects.get(id=id)
