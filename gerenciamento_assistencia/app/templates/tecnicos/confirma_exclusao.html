@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Remoção de técnico
+{% endblock title %}
+
+{% block content %}
+<style>
+  .mr-90 {
+    margin-right: 90px;
+  }
+
+  @media (min-width: 768px) {
+    .custom-container {
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+</style>
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title">Tem certeza que deseja remover o técnico abaixo?</h3>
+  </div>
+    <div class="box-body">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Informações do Técnico</h5>
+          <hr>
+          <div class="custom-container">
+            <div class="col-lg-10 col-md-8 col-sm-10">
+              <p><strong>Nome:</strong> {{tecnico.nome}}</p>
+              <p><strong>Profissão:</strong> {{tecnico.profissao}}</p>
+              <p><strong>Data de Nascimento:</strong> {{tecnico.data_nascimento}}</p>
+              <p><strong>Email:</strong> {{tecnico.email}}</p>
+              <p><strong>CPF:</strong> {{tecnico.cpf}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form method="POST">
+        {% csrf_token %}
+        <button class="btn btn-danger mt-3" type="submit">Remover</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -63,15 +63,14 @@ def editar_tecnico(request, id):
             return redirect('listar_tecnicos')
     return render(request, 'tecnicos/form_tecnico.html', {'form_tecnico': form_tecnico ,'form_endereco': form_endereco})
 
-
-# def remover_cliente(request, id):
-#     cliente = cliente_service.listar_cliente_id(id)
-#     endereco = endereco_service.listar_endereco_id(cliente.endereco.id)
-#     if request.method == "POST":
-#         cliente_service.remover_cliente(cliente)
-#         endereco_service.remover_endereco(endereco)
-#         return redirect('listar_clientes')
-#     return render(request, 'clientes/confirma_exclusao.html', {'cliente': cliente})
+def remover_tecnico(request, id):
+    tecnico = tecnico_service.listar_tecnico_id(id)
+    endereco = endereco_service.listar_endereco_id(tecnico.endereco.id)
+    if request.method == "POST":
+        tecnico_service.remover_tecnico(tecnico)
+        endereco_service.remover_endereco(endereco)
+        return redirect('listar_tecnicos')
+    return render(request, 'tecnicos/confirma_exclusao.html', {'tecnico': tecnico})
 
 
 

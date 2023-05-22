@@ -18,3 +18,6 @@ def editar_tecnico(tecnico, tecnico_novo):
     tecnico.data_nascimento= tecnico_novo.data_nascimento
     tecnico.profissao= tecnico_novo.profissao
     tecnico.save(force_update=True)
+
+def remover_tecnico(tecnico):
+    tecnico.delete()

@@ -6,5 +6,5 @@ urlpatterns = [
     path('listar_tecnicos', tecnico_views.listar_tecnicos, name='listar_tecnicos'),
     path('listar_tecnico/<int:id>', tecnico_views.listar_tecnico_id, name='listar_tecnico_id'),
     path('editar_tecnico/<int:id>', tecnico_views.editar_tecnico, name='editar_tecnico'),
-
+    path('remover_tecnico/<int:id>', tecnico_views.remover_tecnico, name='remover_tecnico'),
 ]
